@@ -114,8 +114,9 @@ service hwnffserver  /vendor/bin/hwnffserver
     socket hwnff stream 0660 root mount
 
 service data_cleanner /vendor/bin/data_cleaner
-    class core
-    oneshot
+    user root
+    group system log
+    seclabel u:r:fmdserver:s0
 
 service check_hota /system/bin/sh /system/etc/check_hota.sh
     class core

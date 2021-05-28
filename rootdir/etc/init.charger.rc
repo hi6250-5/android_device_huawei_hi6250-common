@@ -55,16 +55,11 @@ on charger
     chown system system /sys/class/hw_power/charger/direct_charger/iin_thermal
     chmod 0660 /sys/class/hw_power/charger/direct_charger/adaptor_voltage
     chown system system /sys/class/hw_power/charger/direct_charger/adaptor_voltage
-    trigger cust_parse_action
-    trigger load_system_props_action
     trigger charger-config-usb_gadget
     class_start charger
     wait /dev/block/bootdevice/by-name/oeminfo
     start oeminfo_nvm
     start teecd
-
-on property:sys.powerctl=*
-   powerctl ${sys.powerctl}
 
 service ueventd /sbin/ueventd
     critical
@@ -95,13 +90,6 @@ on property:vold.decrypt=trigger_restart_framework
 
 on property:vold.decrypt=trigger_post_fs_data
     trigger post-fs-data
-
-on cust_parse_action
-    cust_parse
-
-on load_system_props_action
-    load_system_props
-
 
 service defaultcrypto /system/bin/vdc --wait cryptfs mountdefaultencrypted
     disabled

@@ -17,8 +17,6 @@ on early-boot
     group audio inet net_bt net_bt_admin net_bw_acct system
 
 on init
-    verity_load_state
-
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     chmod 664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
@@ -222,7 +220,6 @@ on charger
     write /sys/class/devfreq/ddrfreq_up_threshold/min_freq 933000000
 
 on fs
-    mkdir /patch_hw 0775 system system
     export ANDROID_STORAGE ""
 
 
@@ -231,7 +228,6 @@ on fs
     chown root root /sec_storage
     chmod 600 /sec_storage
 
-    mount_all_patch /patch_hw/fstab.patch_step1
     restorecon /splash2
     chmod 775 /splash2
     chown root system /splash2
@@ -285,9 +281,6 @@ on boot
     write /splash2/sim/sim_pin_file.bin  "000000"
     chown system system /sys/class/leds/lcd_backlight0/brightness
     chmod 644 /sys/class/leds/lcd_backlight0/brightness
-
-    chmod 755 /system/bin/busybox
-
 
 	chown system system /dev/sensorhub
 	chmod 0660 /dev/sensorhub
