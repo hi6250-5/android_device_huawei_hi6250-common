@@ -4,12 +4,12 @@
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 /dev/block/platform/hi_mci.0/by-name/boot              /boot           emmc             defaults                                                                                                           recoveryonly
 /dev/block/platform/hi_mci.0/by-name/recovery          /recovery       emmc             defaults                                                                                                           recoveryonly
-/dev/block/platform/hi_mci.0/by-name/system            /system         ext4:squashfs    ro,barrier=1                                                                                                       wait,verify
-/dev/block/platform/hi_mci.0/by-name/vendor            /vendor         ext4:squashfs    ro,barrier=1                                                                                                       wait,verify
-/dev/block/platform/hi_mci.0/by-name/product           /product        ext4:squashfs    ro,barrier=1                                                                                                       wait,verify
-/dev/block/platform/hi_mci.0/by-name/version           /version        ext4:squashfs    ro,barrier=1                                                                                                       wait,verify
-/dev/block/platform/hi_mci.0/by-name/cust              /cust           ext4:squashfs    ro,barrier=1                                                                                                       wait,verify
-/dev/block/platform/hi_mci.0/by-name/patch             /patch_hw       ext4             ro                                                                                                                 wait,verify
+/dev/block/platform/hi_mci.0/by-name/system            /system         ext4:squashfs    ro,barrier=1                                                                                                       wait
+/dev/block/platform/hi_mci.0/by-name/vendor            /vendor         ext4:squashfs    ro,barrier=1                                                                                                       wait
+/dev/block/platform/hi_mci.0/by-name/product           /product        ext4:squashfs    ro,barrier=1                                                                                                       wait
+/dev/block/platform/hi_mci.0/by-name/version           /version        ext4:squashfs    ro,barrier=1                                                                                                       wait
+/dev/block/platform/hi_mci.0/by-name/cust              /cust           ext4:squashfs    ro,barrier=1                                                                                                       wait
+/dev/block/platform/hi_mci.0/by-name/patch             /patch_hw       ext4             ro                                                                                                                 wait
 /devices/hi_mci.1/mmc_host/mmc1/*                      auto            auto             defaults                                                                                                           voldmanaged=sdcard:auto,noemulatedsd
 /devices/platform/hi_mci.1/mmc_host/mmc1/*             auto            auto             defaults                                                                                                           voldmanaged=sdcard:auto,noemulatedsd
 /devices/hisi-usb-otg/usb1/*                           auto            auto             defaults                                                                                                           voldmanaged=usbotg:auto
