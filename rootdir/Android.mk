@@ -5,7 +5,7 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-# http://www.apache.org/licenses/LICENSE-2.0
+#      http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,16 +14,11 @@
 # limitations under the License.
 #
 
-## Common Path
-COMMON_PATH := device/huawei/hi6250-common
+LOCAL_PATH := $(call my-dir)
 
-# Display
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_SCREEN_WIDTH := 1080
-
-# Init
-PRODUCT_PACKAGES += \
-    init.recovery.hi6250.rc
-
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += $(COMMON_PATH)
+include $(CLEAR_VARS)
+LOCAL_MODULE := init.recovery.hi6250.rc
+LOCAL_SRC_FILES := etc/init.recovery.hi6250.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_RECOVERY_OUT)/root
+include $(BUILD_PREBUILT)
