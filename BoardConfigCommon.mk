@@ -50,6 +50,9 @@ TARGET_HARDWARE_3D := true
 TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
 
+# HIDL
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
+
 # Kernel
 BOARD_KERNEL_BASE := 0x00478000
 BOARD_KERNEL_CMDLINE := loglevel=4 coherent_pool=512K page_tracker=on slub_min_objects=12 unmovable_isolate1=2:192M,3:224M,4:256M androidboot.selinux=permissive
