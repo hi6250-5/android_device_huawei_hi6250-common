@@ -9,7 +9,6 @@
 /dev/block/platform/hi_mci.0/by-name/product           /product        ext4    ro,barrier=1                                                                                            wait
 /dev/block/platform/hi_mci.0/by-name/version           /version        ext4    ro,barrier=1                                                                                            wait
 /dev/block/platform/hi_mci.0/by-name/cust              /cust           ext4    ro,barrier=1                                                                                            wait
-/dev/block/platform/hi_mci.0/by-name/patch             /patch_hw       ext4    ro                                                                                                      wait
 /devices/hi_mci.1/mmc_host/mmc1/*                      auto            auto    defaults                                                                                                voldmanaged=sdcard:auto,noemulatedsd
 /devices/platform/hi_mci.1/mmc_host/mmc1/*             auto            auto    defaults                                                                                                voldmanaged=sdcard:auto,noemulatedsd
 /devices/hisi-usb-otg/usb1/*                           auto            auto    defaults                                                                                                voldmanaged=usbotg:auto

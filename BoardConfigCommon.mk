@@ -88,7 +88,6 @@ BOARD_ROOT_EXTRA_FOLDERS += \
     modem_fw \
     modem_log \
     mnvm2:0 \
-    patch_hw \
     sec_storage \
     splash2 \
     version
