@@ -69,6 +69,9 @@ BOARD_FLASH_BLOCK_SIZE := 4096 # blockdev --getbsz /dev/block/mmcblk0
 # Platform
 TARGET_BOARD_PLATFORM := hi6250
 
+# Props
+TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
+
 # Recovery
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.hi6250
 
